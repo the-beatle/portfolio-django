@@ -1,8 +1,7 @@
 # Create your models here.
-from django.contrib import admin
-
 from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
+
 
 class Category(MPTTModel):
     created = models.DateTimeField(auto_now_add=True)
@@ -16,6 +15,3 @@ class Category(MPTTModel):
 
     def __str__(self):
         return self.name
-
-
-admin.site.register(Category)
