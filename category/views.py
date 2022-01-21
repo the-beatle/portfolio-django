@@ -4,7 +4,7 @@ from rest_framework import routers, serializers, viewsets, permissions
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all()
+    queryset = Category.objects.filter(level=0)
     serializer_class = CategorySerializer
     http_method_names = ['get']
     permission_classes = [permissions.AllowAny]
