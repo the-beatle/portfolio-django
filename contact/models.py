@@ -1,5 +1,6 @@
 # Create your models here.
 from django.db import models
+from django.contrib import admin
 
 
 class Contact(models.Model):
@@ -9,3 +10,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.email
+
+
+admin.site.register(Contact)
