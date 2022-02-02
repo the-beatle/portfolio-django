@@ -12,8 +12,6 @@ class Contact(models.Model):
     def __str__(self):
         return self.email
 
-
-admin.site.register(Contact)
     def send_mail(self):
         send_mail(
             "Thank you for contact me!",
@@ -21,3 +19,8 @@ admin.site.register(Contact)
             "marcae7@gmail.com",
             ["marcae7@gmail.com", self.email]
         )
+
+
+admin.site.register(Contact)
+
+
