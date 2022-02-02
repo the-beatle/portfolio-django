@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     "category.apps.CategoryConfig",
     "mptt",
+    "contact.apps.ContactConfig",
 ]
 
 MIDDLEWARE = [
