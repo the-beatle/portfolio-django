@@ -32,6 +32,12 @@ ALLOWED_HOSTS = [os.environ.get('FRONTEND_URL')]
 
 # Application definition
 
+EMAIL_HOST = "smtp.googlemail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -104,6 +110,7 @@ DATABASES = {
     }
 }
 
+
 JWT_AUTH = {
     'JWT_PAYLOAD_GET_USERNAME_HANDLER':
         'auth0authorization.utils.jwt_get_username_from_payload_handler',
@@ -117,7 +124,7 @@ JWT_AUTH = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
-CORS_ORIGIN_WHITELIST = ("http://localhost:3000",os.getenv("FRONTEND_URL"))
+CORS_ORIGIN_WHITELIST = ("http://localhost:3000", os.getenv("FRONTEND_URL"))
 
 AUTH_PASSWORD_VALIDATORS = [
     {
