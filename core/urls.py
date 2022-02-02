@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from category.views import CategoryViewSet
+from contact.views import ContactViewSet
 
 admin.autodiscover()
 
@@ -32,6 +33,7 @@ class UserViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'category', CategoryViewSet)
+router.register(r'contact', ContactViewSet)
 
 
 urlpatterns = [
