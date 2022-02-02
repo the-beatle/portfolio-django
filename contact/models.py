@@ -1,5 +1,6 @@
 # Create your models here.
 from django.db import models
+from django.contrib import admin
 from django.core.mail import send_mail
 
 
@@ -11,6 +12,8 @@ class Contact(models.Model):
     def __str__(self):
         return self.email
 
+
+admin.site.register(Contact)
     def send_mail(self):
         send_mail(
             "Thank you for contact me!",
